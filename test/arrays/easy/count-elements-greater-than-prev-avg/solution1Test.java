@@ -1,9 +1,8 @@
 import java.util.ArrayList;
-import java.util.Random;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class solution1Test {
+public class Solution1Test {
     // Edge Cases
     @Test
     public void emptyArray() {
