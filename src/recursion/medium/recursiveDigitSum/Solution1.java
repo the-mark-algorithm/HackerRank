@@ -1,5 +1,11 @@
 package recursion.medium.recursiveDigitSum;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.InputStreamReader;
+import java.io.IOException;
+
 /*
  * We define super digit of an integer  using the following rules:
  *
@@ -22,8 +28,8 @@ class Result {
      */
 
     public static int superDigit(String n, int k) {
-        if (k < 0) {
-            throw new IllegalArgumentException("Number of concatenations cannot be negative.");
+        if (k < 1) {
+            throw new IllegalArgumentException("Number of concatenations must be at least 1.");
         }
 
         // First calculate sum of concatenated digits
@@ -34,7 +40,7 @@ class Result {
         }
 
         // the same sum of initial digits will be computed for each concatenation
-        sum = sum * (k + 1);
+        sum = sum * k;
 
         // Base Case: Sum of digits is a single digit - super digit found
         if (sum < 10) {
@@ -42,18 +48,9 @@ class Result {
         }
 
         // Resursive Case: Sum of digits is multi-digit
-        return superDigit(sum.toString, 0);
+        String digits = Integer.valueOf(sum).toString();
+        return superDigit(digits, 1);
     }
-
-    public static String concat(String str, int k) {
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < k; i++) {
-            builder.append(str);
-        }
-
-        return builder.toString();
-    }
-
 }
 
 public class Solution1 {
