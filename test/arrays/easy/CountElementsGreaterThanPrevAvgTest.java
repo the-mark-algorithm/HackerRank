@@ -1,7 +1,7 @@
 package test.arrays.easy;
 
 import arrays.easy.countElementsGreaterThanPrevAvg.CountElementsGreaterThanPrevAvg;
-import arrays.easy.countElementsGreaterThanPrevAvg.Impl1;
+import arrays.easy.countElementsGreaterThanPrevAvg.*;
 
 import java.util.ArrayList;
 import org.junit.Assert;
